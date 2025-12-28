@@ -1,17 +1,17 @@
-# 🎓 Akademi - Premium Scholarship Management System
+# 🎓 Akademi - Scholarship Management System
 
 <div align="center">
 
-![Akademi Banner](https://img.shields.io/badge/Akademi-Premium%20Scholarship%20Platform-6366f1?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Akademi Banner](https://img.shields.io/badge/Akademi-Elite%20Edition-4f46e5?style=for-the-badge&logo=googlescholar&logoColor=white)
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge&logo=vercel)](https://akademi-scholarship.vercel.app/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Built with React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 
-**A production-grade, full-stack scholarship management platform with premium UI/UX**
+**A premium, full-stack scholarship management platform with world-class UI/UX**
 
-[Live Demo](https://akademi-scholarship.vercel.app/) • [Features](#-key-features) • [Tech Stack](#-technology-stack) • [Quick Start](#-quick-start) • [Documentation](#-documentation)
+[Features](#-key-features) • [Tech Stack](#-technology-stack) • [Quick Start](#-quick-start) • [Architecture](#-system-architecture)
 
 </div>
 
@@ -19,203 +19,220 @@
 
 ## 📖 **Overview**
 
-Akademi is a comprehensive **Scholarship Management System** featuring premium glassmorphism design, real-time application tracking, and role-based dashboards for **Students**, **Moderators**, and **Admins**. Built with MERN stack and optimized for a seamless academic experience.
+Akademi "Elite Edition" is a sophisticated **scholarship management ecosystem** designed with premium glassmorphism aesthetics, fluid animations, and a focus on accessibility. It serves as a bridge between high-potential students and global educational opportunities, offering a seamless application and management workflow.
 
 ### **🌟 Highlights**
 
-- ✨ **Premium UI/UX** with advanced Glassmorphism & Framer Motion animations
-- 🔐 **Secure Authentication** with Firebase & Role-Based Access Control (RBAC)
-- 📊 **Real-time Analytics** for scholarship applications and reviews
-- 💳 **Secure Payments** integrated with Stripe for application fees
-- 🎨 **Modern Design System** using Tailwind CSS and Outfit typography
-- ⚡ **Lightning Fast** built with Vite 6 and Node.js 21
-- 📱 **Fully Responsive** mobile-first architecture
-- ♿ **Accessible** WCAG 2.1 AA compliant
+- ✨ **Glassmorphism Design** with `backdrop-blur` and premium mesh gradients
+- 🎭 **Advanced Motion** powered by Framer Motion for meaningful transitions
+- 🔐 **Secure Flow** with role-based access control (RBAC)
+- 📊 **Unified Dashboard** for students, moderators, and administrators
+- ⚡ **Performance Optimized** achieving near-perfect Lighthouse scores
+- 📱 **Adaptive Layout** ensuring excellence across all device sizes
+- ♿ **Inclusive UX** following WCAG 2.1 AA guidelines
 
 ---
 
 ## 🎯 **Key Features**
 
-### 🏠 **Public Pages**
+### 🏠 **Public Experience**
 
-| Page | Description | Live URL |
+| Feature | Description | Status |
 |------|-------------|----------|
-| **Home** | Immersive landing with scholarship showcases & statistics | [View →](https://akademi-scholarship.vercel.app/) |
-| **All Scholarships** | Advanced filtering and search for available grants | [View →](https://akademi-scholarship.vercel.app/all-scholarships) |
-| **About Us** | Our mission to democratize education access | [View →](https://akademi-scholarship.vercel.app/about) |
-| **Contact** | Support portal with real-time feedback | [View →](https://akademi-scholarship.vercel.app/contact) |
+| **Interactive Hero** | Animated glass-panel banner with dynamic typography | ✅ Ready |
+| **Top Scholarships** | Curator-picked opportunities with premium card designs | ✅ Ready |
+| **Search & Filter** | Real-time scholarship discovery with advanced sorting | ✅ Ready |
+| **Contact Hub** | Translucent support form with micro-interactions | ✅ Ready |
 
-### 🔐 **Authentication & Security**
+### 🎓 **User Capabilities**
 
-- **Firebase Auth** - Industry-standard secure login/register
-- **RBAC** - Distinct flows for Student, Moderator, and Admin
-- **JWT Protection** - Secure API communication
-- **Secure Payments** - Stripe-powered fee processing
-
----
-
-## 🛠️ **Technology Stack**
-
-### **Frontend**
-
-<table>
-<tr>
-<td>
-
-**Core**
-- ⚛️ React 18.3
-- ⚡ Vite 6.0
-- 🛣️ React Router 7
-
-</td>
-<td>
-
-**Styling**
-- 🎨 Tailwind CSS 3.4
-- 🎭 Framer Motion 12
-- 🌈 Custom Glassmorphism
-
-</td>
-<td>
-
-**State & Data**
-- 🔄 Context API
-- 💾 LocalForage
-- 📊 Recharts
-
-</td>
-</tr>
-</table>
-
-### **Backend**
-
-<table>
-<tr>
-<td>
-
-**Core**
-- 🟢 Node.js 21+
-- 🚂 Express 4.21
-- 🍃 MongoDB
-
-</td>
-<td>
-
-**Services**
-- 💳 Stripe API
-- 🔥 Firebase Admin
-- 🔐 JWT
-
-</td>
-<td>
-
-**Middleware**
-- 🌐 CORS
-- 🛡️ Helmet.js
-- 📝 Morgan
-
-</td>
-</tr>
-</table>
+- **Discovery** - Browse and search scholarships by category, university, and deadline.
+- **Application Portal** - Intuitive multi-step application flow with fee integration.
+- **Review System** - Transparency through student ratings and detailed feedback.
+- **Personal Dashboard** - Track application status and review history in real-time.
 
 ---
 
 ## 📂 **Project Structure**
 
 ```
-scholarship/
-├── 📁 client/                 # React + Vite Frontend
+Akademi/
+├── 📁 client/                   # React + Vite Frontend
 │   ├── 📁 src/
-│   │   ├── 📁 components/       # UI & Feature components
-│   │   ├── 📁 pages/            # View pages
-│   │   ├── 📁 context/          # State management
-│   │   └── 📄 index.css         # Design System
+│   │   ├── 📁 Components/       # Reusable UI Architecture
+│   │   ├── 📁 Context/          # Global State & Auth
+│   │   ├── 📁 Leyout/           # Layout Systems (Root, etc.)
+│   │   ├── 📁 Pages/            # Feature-driven Page Modules
+│   │   └── 📄 index.css         # Core Design System (Glassmorphism)
+│   ├── 📄 vite.config.js
+│   └── 📄 package.json
 │
-├── 📁 server/                 # Node.js + Express Backend
-│   ├── 📄 index.js           # Entry point
-│   └── 📄 package.json       # Backend dependencies
+├── 📁 server/                   # Node.js + Express Backend
+│   ├── 📄 index.js              # Server Logic & API Routes
+│   ├── 📄 .env.example          # Environment Template
+│   └── 📄 package.json
 │
-└── 📄 README.md               # Elite Documentation
+├── 📄 README.md                 # Elite Project Documentation
+└── 📄 task.md                   # Development Roadmap
+```
+
+---
+
+## 🛠️ **Technology Stack**
+
+### **Frontend Architecture**
+
+<table>
+<tr>
+<td>
+
+**Core Engine**
+- ⚛️ React 18
+- ⚡ Vite (Ultra-fast build)
+- 📘 JavaScript (ES6+)
+
+</td>
+<td>
+
+**Visual System**
+- 🎨 Tailwind CSS
+- 🎭 Framer Motion 11
+- 🌈 Premium Mesh Gradients
+
+</td>
+<td>
+
+**Data & UX**
+- 🔄 React Router Dom
+- 🔔 React Toastify
+- 📊 Recharts
+
+</td>
+</tr>
+</table>
+
+### **Backend Infrastructure**
+
+<table>
+<tr>
+<td>
+
+**API & Runtime**
+- 🟢 Node.js
+- 🚂 Express.js
+- 🛡️ CORS & Security
+
+</td>
+<td>
+
+**Persistence**
+- 🍃 MongoDB Atlas
+- 🦡 Native Driver
+- 💾 Structured Schemas
+
+</td>
+<td>
+
+**Payments**
+- 💳 Stripe API
+- 🔒 Secure Gateways
+- 🧾 Automated Receipts
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏗️ **System Architecture**
+
+### **Execution Workflow**
+
+```mermaid
+graph TB
+    subgraph "Client Layer (Premium UI)"
+        Browser["🌐 Global Access"]
+        UI["✨ React + Framer Motion"]
+        State["🔄 Auth Context"]
+    end
+
+    subgraph "Logic Layer (Express API)"
+        Server["🚂 Node.js Server"]
+        AuthMiddleware["🔐 RBAC Middleware"]
+        API["🛣️ API Endpoints"]
+    end
+
+    subgraph "Storage Layer (MongoDB)"
+        DB[("🍃 MongoDB Atlas")]
+        Collections["📊 Scholarships / Users / Apps"]
+    end
+
+    Browser --> UI
+    UI --> State
+    State -->|Authenticated Requests| Server
+    Server --> AuthMiddleware
+    AuthMiddleware --> API
+    API --> DB
+    DB --> Collections
+
+    style UI fill:#6366f1,color:#fff
+    style Server fill:#10b981,color:#fff
+    style DB fill:#14b8a6,color:#fff
 ```
 
 ---
 
 ## 🚀 **Quick Start**
 
-### **Prerequisites**
+### **Environment Setup**
 
-- Node.js 20+
-- npm or yarn
-- MongoDB Connection URI
-- Firebase Configuration
+#### **Client (.env)**
+```env
+VITE_API_URL=http://localhost:5000
+```
 
-### **Installation**
+#### **Server (.env)**
+```env
+PORT=5000
+DB_USER=your_db_user
+DB_PASS=your_db_password
+STRIPE_SC_KEY=your_stripe_secret_key
+```
+
+### **Running Locally**
 
 ```bash
-# 1. Clone & Setup
-git clone https://github.com/rak9b/Akademi---Scholarship-Management-System.git
-cd Akademi---Scholarship-Management-System
-
-# 2. Setup Backend
+# 1. Install Backend
 cd server
 npm install
-npm start
 
-# 3. Setup Frontend
+# 2. Run Backend
+npm run dev
+
+# 3. Install Frontend
 cd ../client
 npm install
+
+# 4. Run Frontend
 npm run dev
 ```
 
 ---
 
-## 🏗️ **System Architecture**
+## 🤝 **Contributing**
 
-```mermaid
-graph TB
-    subgraph "Client Layer (React + Vite)"
-        UI["🎨 UI Components"]
-        State["🔄 State Management"]
-        Router["🛣️ Router"]
-    end
-
-    subgraph "Service Layer"
-        Firebase["🔥 Firebase Auth"]
-        Stripe["💳 Stripe Payments"]
-    end
-
-    subgraph "Backend (Node.js + Express)"
-        API["🔌 API Routes"]
-        Middleware["🛡️ Auth Middleware"]
-        Controllers["📋 Logic"]
-    end
-
-    subgraph "Data Layer"
-        DB[("🍃 MongoDB")]
-    end
-
-    UI --> State
-    UI --> Router
-    State --> API
-    API --> Middleware
-    Middleware --> Controllers
-    Controllers --> DB
-    UI -.-> Firebase
-    UI -.-> Stripe
-```
-
----
-
-## 📝 **License**
-
-This project is licensed under the **MIT License**.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for Educational Excellence**
+**Built with Precision by [Your Name]**
 
-⭐ **Star this repo if you found it helpful!** ⭐
+⭐ **Star this repository if you love it!** ⭐
 
 </div>
