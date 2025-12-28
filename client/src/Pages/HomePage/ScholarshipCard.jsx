@@ -19,7 +19,8 @@ const ScholarshipsCard = ({ scholarship }) => {
         applicationDeadline,
         subjectCategory,
         degree,
-        universityImage // Ensure this is coming from the DB
+        universityImage,
+        universityLogo
     } = scholarship;
 
     return (
@@ -46,27 +47,38 @@ const ScholarshipsCard = ({ scholarship }) => {
                     className="absolute inset-0 z-10 pointer-events-none"
                 />
 
+                {/* Accredited Institution Logo */}
+                <div className="absolute top-6 left-6 z-30">
+                    <div className="w-16 h-16 rounded-2xl bg-white p-2 shadow-2xl border border-white/20 flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-500">
+                        <img
+                            src={universityLogo || "https://cdn-icons-png.flaticon.com/512/2681/2681826.png"}
+                            alt="Accredited"
+                            className="w-full h-full object-contain"
+                        />
+                    </div>
+                </div>
+
                 {/* Status Badges */}
-                <div className="absolute top-8 left-8 z-20">
-                    <span className="px-5 py-2 bg-white/10 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full border border-white/20 shadow-2xl">
+                <div className="absolute top-6 right-6 z-20">
+                    <span className="px-4 py-1.5 bg-black/40 backdrop-blur-xl text-white text-[9px] font-black uppercase tracking-[0.2em] rounded-full border border-white/10 shadow-lg">
                         {scholarshipCategory}
                     </span>
                 </div>
 
-                <div className="absolute top-8 right-8 z-20">
+                <div className="absolute bottom-6 right-6 z-20">
                     <div className="flex flex-col items-end">
-                        <span className="text-[9px] font-black text-white/60 uppercase tracking-widest mb-1">Index Fee</span>
-                        <span className="text-white font-black text-2xl tracking-tighter shadow-sm">${applicationFees}</span>
+                        <span className="text-[9px] font-black text-white/80 uppercase tracking-widest mb-0.5">Index Fee</span>
+                        <span className="text-white font-black text-2xl tracking-tighter drop-shadow-md">${applicationFees}</span>
                     </div>
                 </div>
 
                 {/* Floating Meta */}
-                <div className="absolute bottom-8 left-8 z-20 right-8">
-                    <div className="flex items-center gap-2 text-[#16a34a] font-black text-xs uppercase tracking-[0.3em] mb-1">
-                        <div className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse" />
+                <div className="absolute bottom-6 left-6 right-20 z-20">
+                    <div className="flex items-center gap-2 text-[#4ade80] font-black text-[10px] uppercase tracking-[0.2em] mb-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#4ade80] animate-pulse" />
                         {universityName}
                     </div>
-                    <h3 className="text-3xl font-black text-white uppercase tracking-tighter leading-none line-clamp-1 drop-shadow-2xl">
+                    <h3 className="text-2xl font-black text-white uppercase tracking-tighter leading-none line-clamp-2 drop-shadow-xl pr-4">
                         {scholarshipName}
                     </h3>
                 </div>
