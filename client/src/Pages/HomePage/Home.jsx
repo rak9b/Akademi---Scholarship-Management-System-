@@ -1,21 +1,20 @@
-import React from 'react';
 import Banner from './Banner';
+import FeaturesSection from './FeaturesSection';
 import TopScholarships from './TopScholarships';
-import { useLoaderData } from 'react-router-dom';
+import TestimonialsSection from './TestimonialsSection';
+import HowItWorks from './HowItWorks';
 import Contact from './Contact';
-import Reviews from './Reviews';
 import LatestBlogs from './LatestBlogs';
 import NewsLetter from './NewsLetter';
 import FAQ from './FAQ';
-import HowItWorks from './HowItWorks';
 
 const Home = () => {
-    const data = useLoaderData()
     return (
         <>
             <Banner />
-            <TopScholarships data={data} />
-            <Reviews />
+            <FeaturesSection />
+            <TopScholarships />
+            <TestimonialsSection />
             <HowItWorks />
             <Contact />
             <LatestBlogs />

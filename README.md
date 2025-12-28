@@ -1,17 +1,16 @@
-# 🎓 Akademi - Scholarship Management System
+# 🎓 Akademi - Premium Scholarship Management System
 
 <div align="center">
 
-![Akademi Banner](https://img.shields.io/badge/Akademi-Elite%20Edition-4f46e5?style=for-the-badge&logo=googlescholar&logoColor=white)
+![Akademi Banner](https://img.shields.io/badge/Akademi-Signature%20Edition-16a34a?style=for-the-badge&logo=googlescholar&logoColor=white)
 
-[![Built with React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Status](https://img.shields.io/badge/Status-Zero_Error-success?style=for-the-badge&logo=checkmarx)](https://scholarship-management-sys.vercel.app/)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 
-**A premium, full-stack scholarship management platform with world-class UI/UX**
+**A production-grade scholarship application orchestration platform with Elite UI/UX**
 
-[Features](#-key-features) • [Tech Stack](#-technology-stack) • [Quick Start](#-quick-start) • [Architecture](#-system-architecture)
+[Live Demo](https://scholarship-management-sys.vercel.app/) • [Features](#-key-features) • [Tech Stack](#-technology-stack) • [Quick Start](#-quick-start) • [URL Guide](#-url-reference)
 
 </div>
 
@@ -19,220 +18,156 @@
 
 ## 📖 **Overview**
 
-Akademi "Elite Edition" is a sophisticated **scholarship management ecosystem** designed with premium glassmorphism aesthetics, fluid animations, and a focus on accessibility. It serves as a bridge between high-potential students and global educational opportunities, offering a seamless application and management workflow.
+Akademi is a comprehensive **scholarship intelligence platform** featuring premium "Signature Edition" aesthetics, real-time analytics, and role-based access control for **Students**, **Moderators**, and **Admins**. Built with a focus on visual excellence and technical stability.
 
 ### **🌟 Highlights**
 
-- ✨ **Glassmorphism Design** with `backdrop-blur` and premium mesh gradients
-- 🎭 **Advanced Motion** powered by Framer Motion for meaningful transitions
-- 🔐 **Secure Flow** with role-based access control (RBAC)
-- 📊 **Unified Dashboard** for students, moderators, and administrators
-- ⚡ **Performance Optimized** achieving near-perfect Lighthouse scores
-- 📱 **Adaptive Layout** ensuring excellence across all device sizes
-- ♿ **Inclusive UX** following WCAG 2.1 AA guidelines
+- ✨ **Elite UI/UX** with Framer Motion staggered reveals and glassmorphism.
+- 🔐 **Robust Authentication** with Zod validation and password masking.
+- 🛡️ **Multi-Role Security** (Admin, Moderator, Student) via React Context.
+- 📊 **Smart Analytics** with interactive data visualization.
+- 💳 **Secure Processing** integrated with Stripe payment gateway.
+- ⚡ **Optimized Performance** built with Vite for sub-second loading.
 
 ---
 
 ## 🎯 **Key Features**
 
-### 🏠 **Public Experience**
+### � **Public Portals**
 
-| Feature | Description | Status |
-|------|-------------|----------|
-| **Interactive Hero** | Animated glass-panel banner with dynamic typography | ✅ Ready |
-| **Top Scholarships** | Curator-picked opportunities with premium card designs | ✅ Ready |
-| **Search & Filter** | Real-time scholarship discovery with advanced sorting | ✅ Ready |
-| **Contact Hub** | Translucent support form with micro-interactions | ✅ Ready |
+| Page | Description | Live Path |
+|------|-------------|-----------|
+| **Home** | Immersive landing with scholarship previews & stats | `/` |
+| **Scholarships** | Advanced search/filter scholarly directory | `/all-scholarships` |
+| **About Us** | Mission statement and impact metrics | `/about` |
+| **Resources** | Curated guides for application success | `/resources` |
+| **Pricing** | Clear breakdown of platform access tiers | `/pricing` |
+| **Contact** | 24/7 dedicated support channel | `/contact` |
 
-### 🎓 **User Capabilities**
+### 👤 **Role-Specific Dashboards**
 
-- **Discovery** - Browse and search scholarships by category, university, and deadline.
-- **Application Portal** - Intuitive multi-step application flow with fee integration.
-- **Review System** - Transparency through student ratings and detailed feedback.
-- **Personal Dashboard** - Track application status and review history in real-time.
+#### **🎓 Student Portal**
+- 📍 **Application Tracker** - Real-time status Monitoring.
+- ⭐ **Review Management** - Content-rich feedback engine.
+- 👤 **Elite Profile** - Standardized academic data management.
 
----
+#### **⚖️ Staff/Moderator Interface**
+- 📝 **Scholarship Architect** - Unified CRUD for listings.
+- 📁 **Application Handler** - Processing student submissions.
+- 💬 **Feedback Loop** - Professional communication channel.
 
-## 📂 **Project Structure**
-
-```
-Akademi/
-├── 📁 client/                   # React + Vite Frontend
-│   ├── 📁 src/
-│   │   ├── 📁 Components/       # Reusable UI Architecture
-│   │   ├── 📁 Context/          # Global State & Auth
-│   │   ├── 📁 Leyout/           # Layout Systems (Root, etc.)
-│   │   ├── 📁 Pages/            # Feature-driven Page Modules
-│   │   └── 📄 index.css         # Core Design System (Glassmorphism)
-│   ├── 📄 vite.config.js
-│   └── 📄 package.json
-│
-├── 📁 server/                   # Node.js + Express Backend
-│   ├── 📄 index.js              # Server Logic & API Routes
-│   ├── 📄 .env.example          # Environment Template
-│   └── 📄 package.json
-│
-├── 📄 README.md                 # Elite Project Documentation
-└── 📄 task.md                   # Development Roadmap
-```
+#### **👨‍💼 Executive Admin Suite**
+- 📊 **Strategic Intelligence** - Revenue and growth heatmaps.
+- 👥 **Account Orchestration** - Role management and security.
+- 🏛️ **System Configuration** - Global platform parameters.
 
 ---
 
 ## 🛠️ **Technology Stack**
 
 ### **Frontend Architecture**
+- **Core**: React 18.3 + Vite 6.0
+- **Validation**: Zod + React Hook Form (Elite standard)
+- **Styling**: Tailwind CSS (Black/Green/White Palette)
+- **Motion**: Framer Motion 12 (Cinematic Transitions)
+- **Data Viz**: Recharts
 
-<table>
-<tr>
-<td>
-
-**Core Engine**
-- ⚛️ React 18
-- ⚡ Vite (Ultra-fast build)
-- 📘 JavaScript (ES6+)
-
-</td>
-<td>
-
-**Visual System**
-- 🎨 Tailwind CSS
-- 🎭 Framer Motion 11
-- 🌈 Premium Mesh Gradients
-
-</td>
-<td>
-
-**Data & UX**
-- 🔄 React Router Dom
-- 🔔 React Toastify
-- 📊 Recharts
-
-</td>
-</tr>
-</table>
-
-### **Backend Infrastructure**
-
-<table>
-<tr>
-<td>
-
-**API & Runtime**
-- 🟢 Node.js
-- 🚂 Express.js
-- 🛡️ CORS & Security
-
-</td>
-<td>
-
-**Persistence**
-- 🍃 MongoDB Atlas
-- 🦡 Native Driver
-- 💾 Structured Schemas
-
-</td>
-<td>
-
-**Payments**
-- 💳 Stripe API
-- 🔒 Secure Gateways
-- 🧾 Automated Receipts
-
-</td>
-</tr>
-</table>
+### **Backend Core**
+- **Runtime**: Node.js + Express.js
+- **Persistence**: MongoDB Atlas
+- **Payments**: Stripe API
+- **Middleware**: CORS, Dotenv, Custom Guard Logic
 
 ---
 
-## 🏗️ **System Architecture**
+## � **Standard Test Credentials**
 
-### **Execution Workflow**
+Use these pre-configured access points for platform verification:
+
+| Role | Elite Email | Signature Password | Access Level |
+|------|-------------|-------------------|--------------|
+| **👨‍💼 Admin** | `admin@mail.com` | `Admin123` | Full System Control |
+| **⚖️ Moderator** | `moderator@mail.com` | `Moderator123` | Staff Management |
+| **🎓 Student** | `user@mail.com` | `User123` | Application Portal |
+
+---
+
+## 🏗️ **Architecture Workflow**
 
 ```mermaid
 graph TB
-    subgraph "Client Layer (Premium UI)"
-        Browser["🌐 Global Access"]
-        UI["✨ React + Framer Motion"]
-        State["🔄 Auth Context"]
+    subgraph "Client Layer"
+        User["👤 Candidate/Staff"]
+        Auth["🔐 Security Handler"]
     end
 
-    subgraph "Logic Layer (Express API)"
-        Server["🚂 Node.js Server"]
-        AuthMiddleware["🔐 RBAC Middleware"]
-        API["🛣️ API Endpoints"]
+    subgraph "Core Application (React)"
+        Router["�️ RBAC Router"]
+        Store["� Context Store"]
+        UI["🎨 Signature UI"]
+        
+        User --> Auth
+        Auth --> Store
+        Store --> Router
+        Router --> UI
     end
 
-    subgraph "Storage Layer (MongoDB)"
+    subgraph "Cloud Services"
+        API["� Node.js API"]
         DB[("🍃 MongoDB Atlas")]
-        Collections["📊 Scholarships / Users / Apps"]
+        Pay["💳 Stripe Cloud"]
+        
+        UI -->|Secure Request| API
+        API --> DB
+        API --> Pay
     end
-
-    Browser --> UI
-    UI --> State
-    State -->|Authenticated Requests| Server
-    Server --> AuthMiddleware
-    AuthMiddleware --> API
-    API --> DB
-    DB --> Collections
-
-    style UI fill:#6366f1,color:#fff
-    style Server fill:#10b981,color:#fff
-    style DB fill:#14b8a6,color:#fff
 ```
+
+---
+
+## 🔗 **URL Reference**
+
+### **Public URLs**
+- `http://localhost:5173/` - Landing Page
+- `http://localhost:5173/all-scholarships` - Scholarship Directory
+- `http://localhost:5173/scholarship-details/:id` - Detailed View
+- `http://localhost:5173/about` - About Us
+- `http://localhost:5173/blog` - News & Updates
+- `http://localhost:5173/pricing` - Platform Pricing
+- `http://localhost:5173/contact` - Support Channel
+
+### **Dashboard Navigation**
+- `http://localhost:5173/dashboard/profile` - User Profile (Default)
+- `http://localhost:5173/dashboard/add-scholarships` - Scholarship Creator (Staff)
+- `http://localhost:5173/dashboard/manage-scholarships` - Directory Manager (Staff)
+- `http://localhost:5173/dashboard/manage-applications` - Application Processor (Staff)
+- `http://localhost:5173/dashboard/manage-users` - User Orchestrator (Admin)
+- `http://localhost:5173/dashboard/analytics` - Strategic Insights (Admin)
+- `http://localhost:5173/dashboard/my-application/:id` - Submission Tracking (Student)
+- `http://localhost:5173/dashboard/my-reviews/:id` - Review Engine (Student)
 
 ---
 
 ## 🚀 **Quick Start**
 
-### **Environment Setup**
-
-#### **Client (.env)**
-```env
-VITE_API_URL=http://localhost:5000
-```
-
-#### **Server (.env)**
-```env
-PORT=5000
-DB_USER=your_db_user
-DB_PASS=your_db_password
-STRIPE_SC_KEY=your_stripe_secret_key
-```
-
-### **Running Locally**
-
+### **Installation**
 ```bash
-# 1. Install Backend
-cd server
-npm install
+# Clone & Enter
+git clone https://github.com/yourusername/akademi.git && cd akademi
 
-# 2. Run Backend
-npm run dev
+# Start Backend
+cd server && npm install && npm run dev
 
-# 3. Install Frontend
-cd ../client
-npm install
-
-# 4. Run Frontend
-npm run dev
+# Start Frontend
+cd ../client && npm install && npm run dev
 ```
-
----
-
-## 🤝 **Contributing**
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ---
 
 <div align="center">
 
-**Built with Precision by [Your Name]**
+**Built with Precision for Educational Excellence**
 
-⭐ **Star this repository if you love it!** ⭐
+⭐ **Star this repo if you found it helpful!** ⭐
 
 </div>

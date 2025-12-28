@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../../Context/AuthProvider';
+import { AuthContext } from '../../../Context/MockAuthProvider';
 import { toast } from 'react-toastify';
 
 const AddScholarships = () => {
@@ -29,7 +29,7 @@ const AddScholarships = () => {
         }).then(res => res.json())
             .then(res => {
                 const newData = { ...data, applicationFees: parseInt(data.applicationFees), serviceCharge: parseInt(data.serviceCharge), tuitionFees: parseInt(data.tuitionFees), universityImage: res.data.url, universityWorldRank: parseInt(data.universityWorldRank), scholarshipPostDate: newDate, postedUserEmail: user.email }
-                fetch(`https://akademi-university-project.vercel.app/add-scholarship?email=${user?.email}`, {
+                fetch(`${import.meta.env.VITE_API_URL}/add-scholarship?email=${user?.email}`, {
                     method: 'POST',
                     headers: { 'content-type': 'application/json' },
                     body: JSON.stringify(newData)
@@ -46,7 +46,7 @@ const AddScholarships = () => {
 
     }
     return (
-        <section className='bg-[#f2f8f1] h-full py-5 md:py-14'>
+        <section className='bg-white h-full py-5 md:py-14'>
             <div className='max-w-screen-lg  mx-auto'>
                 <form onSubmit={handleSubmit} className='flex gap-5 flex-col justify-center' action="">
                     <div className='grid justify-center items-center md:grid-cols-2 xl:grid-cols-3 gap-5'>
@@ -156,7 +156,7 @@ const AddScholarships = () => {
                         </div>
                     </div>
                     <div className='flex pt-4 justify-center'>
-                        <button className="btn transition duration-300 hover:bg-[#7CFF77] hover:text-[#14452F] bg-[#185137] text-white px-7">Add Scholarship</button>
+                        <button className="btn transition duration-300 bg-black text-white hover:bg-green-600 border border-green-600/20 px-7">Add Scholarship</button>
                     </div>
                 </form>
             </div>

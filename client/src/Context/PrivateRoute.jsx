@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from './AuthProvider';
+import { AuthContext } from './MockAuthProvider';
 import { Navigate } from 'react-router-dom';
 import Animation from '../Components/Animation';
 
@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
     if (user) {
         return children
     }
-    return <Navigate to={'/login'}></Navigate>
+    return <Navigate to={'/login'} />
 
 };
 

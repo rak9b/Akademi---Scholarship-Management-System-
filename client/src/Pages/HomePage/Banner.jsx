@@ -1,91 +1,179 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { FaSearch, FaGraduationCap, FaAward, FaArrowRight, FaUniversity, FaMicroscope, FaLaptopCode } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+
+import bgImg from '../../assets/Pattern-Bg.png';
+import image1 from '../../assets/AdobeStock_545875468@2x-1.webp';
+import image2 from '../../assets/AdobeStock_587433154-1.webp';
 
 const Banner = () => {
-    const navigate = useNavigate();
+    const slides = [
+        {
+            title: "Global Engineering",
+            subtitle: "Scholarships",
+            highlight: "Engineering",
+            description: "Unlock your potential with elite engineering programs worldwide. Full and partial funding for future innovators.",
+            icon: FaLaptopCode,
+            bg: "from-[#0b3824] via-[#0f4a2a] to-[#134d2f]",
+            image: image1
+        },
+        {
+            title: "Medical & Health",
+            subtitle: "Research Grants",
+            highlight: "Medical",
+            description: "Dedicated support for aspiring medical professionals and researchers. Build your clinical career without debt.",
+            icon: FaMicroscope,
+            bg: "from-[#171717] via-[#262626] to-[#0a0a0a]",
+            image: image2
+        },
+        {
+            title: "World Class",
+            subtitle: "Management Awards",
+            highlight: "Management",
+            description: "Join the next generation of global leaders. Exclusive scholarships for MBA and specialized management degrees.",
+            icon: FaUniversity,
+            bg: "from-[#052e16] via-[#064e3b] to-[#14532d]",
+            image: image1
+        }
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { duration: 0.8, staggerChildren: 0.2 }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6 }
+        }
+    };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            {/* Cinematic Background Elements */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 left-0 w-full h-full bg-slate-950" />
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-emerald-900/20 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-gold-600/10 rounded-full blur-[120px]" />
-                <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-            </div>
+        <div className='relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden'>
+            <Swiper
+                spaceBetween={0}
+                effect={'fade'}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                    dynamicBullets: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation, EffectFade]}
+                className="mySwiper h-full"
+            >
+                {slides.map((slide, index) => (
+                    <SwiperSlide key={index}>
+                        <div className={`h-full bg-gradient-to-br ${slide.bg} relative flex items-center`}>
+                            {/* Background Pattern */}
+                            <div
+                                style={{
+                                    backgroundImage: `url(${bgImg})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}
+                                className="absolute opacity-5 inset-0"
+                            />
 
-            <div className="relative z-10 max-w-screen-xl mx-auto px-8 md:px-16 w-full">
-                <div className="flex flex-col items-center text-center">
+                            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-20'>
+                                <div className='grid lg:grid-cols-2 gap-12 items-center'>
+                                    {/* Content */}
+                                    <motion.div
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={containerVariants}
+                                        className='text-center lg:text-left'
+                                    >
+                                        <motion.div variants={itemVariants}>
+                                            <span className='inline-flex items-center px-4 py-2 rounded-full text-xs font-black bg-green-500 text-white mb-6 uppercase tracking-widest'>
+                                                <slide.icon className="mr-2" />
+                                                Elite {slide.highlight} Portal
+                                            </span>
+                                        </motion.div>
 
-                    {/* Sequence 1: Decorative Element */}
-                    <motion.div
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ duration: 1.5, ease: [0.2, 1, 0.3, 1] }}
-                        className="w-24 h-[1px] bg-accent mb-12"
-                    />
+                                        <motion.h1
+                                            variants={itemVariants}
+                                            className='text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-none'
+                                        >
+                                            {slide.title}
+                                            <span className='block text-green-500'>
+                                                {slide.subtitle}
+                                            </span>
+                                        </motion.h1>
 
-                    {/* Sequence 2: Eyebrow */}
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 1 }}
-                        className="text-accent text-[12px] font-bold tracking-[0.5em] uppercase mb-6"
-                    >
-                        Foundation for Excellence
-                    </motion.span>
+                                        <motion.p
+                                            variants={itemVariants}
+                                            className='text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium'
+                                        >
+                                            {slide.description}
+                                        </motion.p>
 
-                    {/* Sequence 3: Headline */}
-                    <motion.h1
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 1.2, ease: [0.2, 1, 0.3, 1] }}
-                        className="font-serif text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] mb-12 max-w-5xl"
-                    >
-                        Shape Your <br />
-                        <span className="text-gold italic">Academic Destiny</span>
-                    </motion.h1>
+                                        <motion.div
+                                            variants={itemVariants}
+                                            className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'
+                                        >
+                                            <Link
+                                                to="/all-scholarships"
+                                                className='group inline-flex items-center px-8 py-4 bg-green-600 text-white font-black rounded-xl hover:bg-white hover:text-black transition-all duration-300 shadow-xl'
+                                            >
+                                                EXPLORE CATEGORY
+                                                <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                            </Link>
+                                        </motion.div>
+                                    </motion.div>
 
-                    {/* Sequence 4: Description */}
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8, duration: 1.5 }}
-                        className="text-foreground/60 text-lg md:text-xl max-w-2xl font-light leading-relaxed mb-16"
-                    >
-                        Access a curated ecosystem of global opportunities designed for the next
-                        generation of thinkers, leaders, and visionaries.
-                    </motion.p>
-
-                    {/* Sequence 5: Actions */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="flex flex-col sm:flex-row items-center gap-12"
-                    >
-                        <button
-                            onClick={() => navigate('/all-scholarships')}
-                            className="high-contrast-btn group flex items-center gap-4"
-                        >
-                            Explore Grants
-                            <span className="w-8 h-[1px] bg-emerald-950 group-hover:w-12 transition-all duration-500" />
-                        </button>
-
-                        <div className="w-[1px] h-12 bg-white/10 hidden sm:block" />
-
-                        <div className="flex flex-col items-start gap-1">
-                            <span className="text-[10px] text-accent/60 tracking-widest uppercase font-bold">Applications Open</span>
-                            <span className="text-white font-serif text-xl">Winter 2025 Cohort</span>
+                                    {/* Image */}
+                                    <motion.div
+                                        initial={{ opacity: 0, x: 50 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.2 }}
+                                        className='hidden lg:block relative'
+                                    >
+                                        <div className="absolute inset-0 bg-green-500 rounded-3xl blur-3xl opacity-10"></div>
+                                        <img
+                                            src={slide.image}
+                                            alt={slide.title}
+                                            className='relative z-10 w-full rounded-3xl shadow-2xl border-2 border-white/10 grayscale hover:grayscale-0 transition-all duration-700'
+                                        />
+                                    </motion.div>
+                                </div>
+                            </div>
                         </div>
-                    </motion.div>
-                </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+            {/* Bottom Wave Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+                    <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" />
+                </svg>
             </div>
 
-            {/* Bottom Etched Border */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
-        </section>
+            <style>{`
+                .swiper-button-next, .swiper-button-prev { color: #16a34a !important; }
+                .swiper-pagination-bullet-active { background: #16a34a !important; }
+            `}</style>
+        </div>
     );
 };
 

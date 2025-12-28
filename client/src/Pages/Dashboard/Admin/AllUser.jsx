@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../../Context/AuthProvider';
+import { AuthContext } from '../../../Context/MockAuthProvider';
 import { toast } from 'react-toastify';
 
 const AllUser = () => {
     const { user } = useContext(AuthContext)
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`https://akademi-university-project.vercel.app/all-users/?email=${user?.email}`)
+        fetch(`${import.meta.env.VITE_API_URL}/all-users/?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -15,7 +15,7 @@ const AllUser = () => {
     }, [user])
 
     const handleDelete = id => {
-        fetch(`https://akademi-university-project.vercel.app/delete-user/${id}?email=${user?.email}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/delete-user/${id}?email=${user?.email}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -27,7 +27,7 @@ const AllUser = () => {
 
     const handleRole = (e, id) => {
 
-        fetch(`https://akademi-university-project.vercel.app/update-role/${id}?role=${e.target.value}&email=${user?.email}&`, {
+        fetch(`${import.meta.env.VITE_API_URL}/update-role/${id}?role=${e.target.value}&email=${user?.email}&`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -38,7 +38,7 @@ const AllUser = () => {
     }
 
     return (
-        <section className=' bg-[#f2f8f1] h-full py-14'>
+        <section className=' bg-white h-full py-14'>
             <div className="overflow-x-auto mx-auto max-w-screen-lg">
                 <table className="table text-center">
                     {/* head */}
@@ -69,7 +69,7 @@ const AllUser = () => {
                                         </select>
                                     </td>
                                     <th>
-                                        <button onClick={() => handleDelete(item._id)} className="btn font-normal btn-error text-white btn-sm">Delete user</button>
+                                        <button onClick={() => handleDelete(item._id)} className="btn font-normal bg-black text-red-500 hover:bg-red-600 hover:text-white border border-red-500/20 btn-sm">Delete user</button>
                                     </th>
                                 </tr>
                             )

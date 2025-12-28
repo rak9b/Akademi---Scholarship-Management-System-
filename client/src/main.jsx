@@ -1,15 +1,16 @@
+console.log("Client: main.jsx loaded");
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, Navigate, RouterProvider, } from "react-router-dom";
-import Root from './Leyout/Root';
+import Root from './Layout/Root';
 import Home from './Pages/HomePage/Home';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import ScholarshipsDetails from './Pages/ScholarshipsDetails/ScholarshipsDetails';
 import AllScholarships from './Pages/AllScholarshipsPage/AllScholarships';
-import AuthProvider from './Context/AuthProvider';
+import MockAuthProvider from './Context/MockAuthProvider';
 import { ToastContainer } from 'react-toastify';
 import PrivateRoute from './Context/PrivateRoute';
 import AddScholarships from './Pages/Dashboard/Admin/AddScholarships';
@@ -24,32 +25,54 @@ import MyApplication from './Pages/Dashboard/User/MyApplication';
 import MyReviews from './Pages/Dashboard/User/MyReviews';
 import Charts from './Pages/Dashboard/Admin/Charts';
 import ErrorPage from './ErrorPage';
+import NotFound from './Pages/NotFound';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import Blog from './Pages/Blog/Blog';
+import Resources from './Pages/Resources/Resources';
 import ContactUs from './Pages/ContactUs/Contact';
+import Pricing from './Pages/Pricing/Pricing';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
         element: <Home />,
-        loader: () => fetch('https://akademi-university-project.vercel.app/')
       },
       {
         path: '/all-scholarships',
         element: <AllScholarships />,
-        loader: () => fetch('https://akademi-university-project.vercel.app/all-data')
       },
       {
         path: '/scholarship-details/:id',
         element: <ScholarshipsDetails />,
-        loader: ({ params }) => fetch(`https://akademi-university-project.vercel.app/scholarship/${params.id}`)
       },
       {
         path: '/contact',
         element: <ContactUs />,
+      },
+      {
+        path: '/about',
+        element: <AboutUs />,
+      },
+      {
+        path: '/blog',
+        element: <Blog />,
+      },
+      {
+        path: '/resources',
+        element: <Resources />,
+      },
+      {
+        path: '/pricing',
+        element: <Pricing />,
       },
       {
         path: '/login',
@@ -65,6 +88,7 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <PrivateRoute ><Dashboard /></PrivateRoute>,
+    errorElement: <ErrorPage />,
     children: [
       // admin routes
       {
@@ -99,7 +123,18 @@ const router = createBrowserRouter([
       {
         path: 'analytics',
         element: <AdminRoute><Charts /></AdminRoute>,
-        loader: () => fetch('https://akademi-university-project.vercel.app/all-collections-data')
+        loader: async () => {
+          try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/all-collections-data`);
+            if (!response.ok) {
+              throw new Error('Failed to load analytics data');
+            }
+            return response.json();
+          } catch (error) {
+            console.error('Loader error:', error);
+            return { error: error.message };
+          }
+        }
       },
       // user route
       {
@@ -109,22 +144,36 @@ const router = createBrowserRouter([
       {
         path: 'my-reviews/:id',
         element: <PrivateRoute><MyReviews /></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://akademi-university-project.vercel.app/my-review/${params.id}`)
+        loader: async ({ params }) => {
+          try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/my-review/${params.id}`);
+            if (!response.ok) {
+              throw new Error('Failed to load reviews');
+            }
+            return response.json();
+          } catch (error) {
+            console.error('Loader error:', error);
+            return { error: error.message };
+          }
+        }
       }
 
     ]
   },
   {
     path: '*',
-    element: <ErrorPage></ErrorPage>
+    element: <NotFound></NotFound>
   }
 ]);
 
+console.log("Client: Router defined, rendering...");
 createRoot(document.getElementById('root')).render(
-  <AuthProvider>
-    <StrictMode>
-      <RouterProvider router={router} />
-      <ToastContainer />
-    </StrictMode>
-  </AuthProvider>
+  <MockAuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <StrictMode>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </StrictMode>
+    </QueryClientProvider>
+  </MockAuthProvider>
 )

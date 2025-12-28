@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import bgImg from '../../../assets/cover-01.png';
-import { AuthContext } from '../../../Context/AuthProvider';
+import { AuthContext } from '../../../Context/MockAuthProvider';
 import { toast } from 'react-toastify';
 
 const Profile = () => {
     const [profile, setProfile] = useState({})
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`https://akademi-university-project.vercel.app/users/${user?.email}`)
+        fetch(`${import.meta.env.VITE_API_URL}/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setProfile(data))
             .catch(err => toast.error('Profile loading failed'))
     }, [user?.email])
     return (
-        <section className='bg-[#f2f8f1] h-full py-14'>
+        <section className='bg-white h-full py-14'>
             <div className='max-w-screen-lg mx-auto'>
                 <div className='relative mb-28'>
                     {/* Background Image */}

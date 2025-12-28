@@ -15,7 +15,7 @@ const AdminRoute = ({ children }) => {
     }
 
     toast.error('You are not authorized to access this page')
-    return < Navigate to={'/'} replace />
+    return <Navigate to={'/'} replace />
 };
 
 export default AdminRoute;

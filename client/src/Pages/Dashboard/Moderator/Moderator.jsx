@@ -12,35 +12,30 @@ const Moderator = () => {
         <Navbar />
         <section className='flex justify-center'>
             <aside className='w-[20%] border-r-2 pt-5h-[calc(100vh-70px)]   '>
-                <h1 style={{
-                    backgroundImage: `url('${dashboardBg}')`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                }} className='text-4xl py-5 mb-5 font-bold text-center hidden md:block text-white max-h-max w-full'> Dashboard</h1>
+                <h1 className='text-4xl py-5 mb-5 font-bold text-center hidden md:block text-white max-h-max w-full bg-black border-b border-green-600/30'> Dashboard</h1>
                 <ul className=' space-y-5 px-2  '>
                     <li>
-                        <NavLink className='flex py-2 px-5 rounded-full items-center gap-2' to="profile">
+                        <NavLink className={({ isActive }) => `flex py-2 px-5 rounded-full items-center gap-2 transition-all duration-300 ${isActive ? 'bg-black text-green-400 border border-green-600/50' : 'text-gray-600 hover:bg-gray-100'}`} to="profile">
                             <FaUserCircle />
                             <span className='hidden md:block'>Profile</span></NavLink>
                     </li>
                     <li>
-                        <NavLink className='flex py-2 px-5 rounded-full items-center gap-2' to="add-scholarships">
+                        <NavLink className={({ isActive }) => `flex py-2 px-5 rounded-full items-center gap-2 transition-all duration-300 ${isActive ? 'bg-black text-green-400 border border-green-600/50' : 'text-gray-600 hover:bg-gray-100'}`} to="add-scholarships">
                             <FaPenToSquare />
                             <span className='hidden md:block'>Add Scholarships</span></NavLink>
                     </li>
                     <li>
-                        <NavLink className='flex py-2 px-5 rounded-full items-center gap-2' to="/dashboard/manage-scholarships">
+                        <NavLink className={({ isActive }) => `flex py-2 px-5 rounded-full items-center gap-2 transition-all duration-300 ${isActive ? 'bg-black text-green-400 border border-green-600/50' : 'text-gray-600 hover:bg-gray-100'}`} to="/dashboard/manage-scholarships">
                             <FaList></FaList>
                             <span className='hidden md:block'>Manage Scholarships</span></NavLink>
                     </li>
                     <li>
-                        <NavLink className='flex py-2 px-5 rounded-full items-center gap-2' to="/dashboard/manage-applications">
+                        <NavLink className={({ isActive }) => `flex py-2 px-5 rounded-full items-center gap-2 transition-all duration-300 ${isActive ? 'bg-black text-green-400 border border-green-600/50' : 'text-gray-600 hover:bg-gray-100'}`} to="/dashboard/manage-applications">
                             <FaBook></FaBook>
                             <span className='hidden md:block'>Manage Applications</span></NavLink>
                     </li>
                     <li>
-                        <NavLink className='flex py-2 px-5 rounded-full items-center gap-2' to="manage-reviews">
+                        <NavLink className={({ isActive }) => `flex py-2 px-5 rounded-full items-center gap-2 transition-all duration-300 ${isActive ? 'bg-black text-green-400 border border-green-600/50' : 'text-gray-600 hover:bg-gray-100'}`} to="manage-reviews">
                             <BiSolidCommentDetail />
                             <span className='hidden md:block'>Reviews</span></NavLink>
                     </li>

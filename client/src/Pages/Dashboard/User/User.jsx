@@ -5,7 +5,7 @@ import { FaBook, FaUserCircle } from 'react-icons/fa';
 import { BiSolidCommentDetail } from 'react-icons/bi';
 import Footer from '../../../Components/Footer';
 import dashboardBg from '../../../assets/dashboard-bg.avif';
-import { AuthContext } from '../../../Context/AuthProvider';
+import { AuthContext } from '../../../Context/MockAuthProvider';
 
 const User = () => {
     const { user } = useContext(AuthContext)

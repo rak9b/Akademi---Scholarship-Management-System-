@@ -7,7 +7,7 @@ import bgImg from '../../assets/Grid-Blog-image-1.png'
 import blogFeatureImg from '../../assets/Grid-Blog-image-2.webp';
 const LatestBlogs = () => {
     return (
-        <section className='max-w-screen-2xl py-20 px-5 sm:px-7 md:px-10 mx-auto flex flex-col lg:flex-row gap-10 sm:gap-14 justify-center bg-[#F2F8F1]'>
+        <section className='max-w-screen-2xl py-20 px-5 sm:px-7 md:px-10 mx-auto flex flex-col lg:flex-row gap-10 sm:gap-14 justify-center bg-white'>
             <div style={{ backgroundImage: `url(${bgImg})`, backgroundRepeat: "no-repeat" }} className='row-span-3 rounded-md max-h-[970px] flex flex-col justify-end gap-5 lg:w-1/2'>
                 <div className='lg:p-12 sm:pb-5 md:pb-10 grid gap-5'>
                     <p className='uppercase text-sm sm:text-base text-[#14452F]'>——— NOW TRENDING</p>
@@ -25,7 +25,7 @@ const LatestBlogs = () => {
                         <p className='flex gap-2 text-sm mb-3'><span className='flex gap-2 items-center'><FaFolder />DEVELOPMENT</span> <span className='flex gap-2 items-center'><BiSolidMessageRounded />{1} COMMENT</span></p>
                         <h3 className='text-xl sm:text-2xl md:text-3xl mb-4'>World Wide Business Logo Design</h3>
                         <p className='text-sm sm:text-base'>Pudes at tellus at urna. Orci eu lobortis elementum nibh tellus molestie. Blandit Maecenas volutpat.</p>
-                        <button className='btn mt-5 md:mt-9  transition-colors duration-300 hover:bg-[#7CFF77] hover:text-[#14452F] bg-[#185137] text-white'>View More</button>
+                        <button className='btn mt-5 md:mt-9 transition-colors duration-300 hover:bg-green-400 hover:text-black bg-black text-white border-none'>View More</button>
                     </div>
                 </div>
                 <hr />
@@ -37,7 +37,7 @@ const LatestBlogs = () => {
                         <p className='flex gap-2 text-sm mb-3'><span className='flex gap-2 items-center'><FaFolder />DEVELOPMENT</span> <span className='flex gap-2 items-center'><BiSolidMessageRounded />{1} COMMENT</span></p>
                         <h3 className='text-xl sm:text-2xl md:text-3xl mb-4'>World Wide Business Logo Design</h3>
                         <p className='text-sm sm:text-base'>Pudes at tellus at urna. Orci eu lobortis elementum nibh tellus molestie. Blandit Maecenas volutpat.</p>
-                        <button className='btn mt-5 md:mt-9  transition-colors duration-300 hover:bg-[#7CFF77] hover:text-[#14452F] bg-[#185137] text-white'>View More</button>
+                        <button className='btn mt-5 md:mt-9 transition-colors duration-300 hover:bg-green-400 hover:text-black bg-black text-white border-none'>View More</button>
                     </div>
                 </div>
                 <hr />
@@ -49,7 +49,7 @@ const LatestBlogs = () => {
                         <p className='flex gap-2 text-sm mb-3'><span className='flex gap-2 items-center'><FaFolder />DEVELOPMENT</span> <span className='flex gap-2 items-center'><BiSolidMessageRounded />{1} COMMENT</span></p>
                         <h3 className='text-xl sm:text-2xl md:text-3xl mb-4'>World Wide Business Logo Design</h3>
                         <p className='text-sm sm:text-base'>Pudes at tellus at urna. Orci eu lobortis elementum nibh tellus molestie. Blandit Maecenas volutpat.</p>
-                        <button className='btn mt-5 md:mt-9  transition-colors duration-300 hover:bg-[#7CFF77] hover:text-[#14452F] bg-[#185137] text-white'>View More</button>
+                        <button className='btn mt-5 md:mt-9 transition-colors duration-300 hover:bg-green-400 hover:text-black bg-black text-white border-none'>View More</button>
                     </div>
                 </div>
             </div>

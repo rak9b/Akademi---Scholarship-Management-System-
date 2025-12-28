@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../Context/AuthProvider';
+import { AuthContext } from '../../Context/MockAuthProvider';
 
 const Contact = () => {
-    const {user}= useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     return (
         <section className='max-w-screen-2xl py-20 px-5 sm:px-7 md:px-10 mx-auto lg:flex space-y-10 '>
             <div className='lg:w-1/2 md:pr-10'>
@@ -51,7 +51,7 @@ const Contact = () => {
                     <option value="Doctor">Doctor</option>
                 </select>
                 <div className='flex'>
-                    <button className='btn w-full mt-10 transition-all duration-300  hover:bg-[#7CFF77] hover:text-[#14452F] bg-[#185137] text-white'>Send Message</button>
+                    <button className='btn w-full mt-10 transition-all duration-300  hover:bg-green-400 hover:text-black bg-black text-white border-none'>Send Message</button>
                 </div>
             </div>
         </section>

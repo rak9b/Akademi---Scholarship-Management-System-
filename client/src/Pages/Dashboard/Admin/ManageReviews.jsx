@@ -1,20 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { MdDeleteForever, MdOutlineCalendarMonth } from 'react-icons/md';
 import ReactStars from "react-rating-stars-component";
-import { AuthContext } from '../../../Context/AuthProvider';
+import { AuthContext } from '../../../Context/MockAuthProvider';
 import { toast } from 'react-toastify';
 const ManageReviews = () => {
     const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch(`https://akademi-university-project.vercel.app/all-reviews?email=${user.email}`)
+        fetch(`${import.meta.env.VITE_API_URL}/all-reviews?email=${user.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
             .catch(err => toast.error('Something went wrong'))
     }, [user])
 
     const handleDelete = id => {
-        fetch(`https://akademi-university-project.vercel.app/delete-review/${id}?email=${user.email}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/delete-review/${id}?email=${user.email}`, {
             method: 'DELETE'
         }).then(res => res.json())
             .then(data => {
@@ -23,11 +23,11 @@ const ManageReviews = () => {
                     setReviews(remainingReviews)
                     toast.success('Review deleted successfully')
                 }
-        })
+            })
     }
-    
+
     return (
-        <section className='bg-[#f2f8f1] h-full  py-5'>
+        <section className='bg-white h-full  py-5'>
             <div className='grid lg:grid-cols-2 grid-cols-1 gap-y-4 justify-center mx-auto xl:grid-cols-3'>
                 {
                     reviews.map(review => <div className="mx-auto card card-compact bg-base-100 w-96 shadow-xl">
