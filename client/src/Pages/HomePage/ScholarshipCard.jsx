@@ -5,50 +5,86 @@ import { Link } from 'react-router-dom';
 import { IoLocationOutline, IoSchoolOutline } from 'react-icons/io5';
 import { PiCertificate } from 'react-icons/pi';
 import { GiNotebook } from 'react-icons/gi';
+
 const ScholarshipsCard = ({ scholarship }) => {
-    const { _id, scholarshipName, applicationFees, degree, description, scholarshipPostDate, universityImage, universityName, universityCity, universityCountry, scholarshipCategory, subjectCategory, applicationDeadline, } = scholarship
-    const text = description
-    const slicedText = text.length > 150 ? text.slice(0, 150) + "..." : text;
+    const { _id, scholarshipName, applicationFees, degree, description, scholarshipPostDate, universityImage, universityName, universityCity, universityCountry, scholarshipCategory, subjectCategory, applicationDeadline } = scholarship;
+    const slicedText = description.length > 120 ? description.slice(0, 120) + "..." : description;
 
     return (
-        <div className="card group max-w-[460px] card-compact bg-base-100 shadow-xl  p-5">
-            <div className='flex items-center gap-4'>
-                <img className='object-cover w-20 rounded-full overflow-hidden h-20'
-                    src={universityImage}
-                    alt="University Logo" />
-                <div className='space-y-1'>
-                    <h2 className="font-bold text-3xl text-[#0c281b]">{universityName}</h2>
-                    <p className='flex text-sm items-center gap-2'><IoLocationOutline />{universityCity + ", " + universityCountry}</p>
-                    <p className='flex items-center text-sm gap-2'><MdOutlineCalendarMonth />{scholarshipPostDate}</p>
+        <div className="glass-card group relative p-6 rounded-[2rem] flex flex-col h-full">
+            <div className='flex items-center gap-5 mb-6'>
+                <div className='relative'>
+                    <img
+                        className='object-cover w-20 h-20 rounded-2xl ring-4 ring-white/5 group-hover:ring-primary/20 transition-all duration-500'
+                        src={universityImage}
+                        alt={universityName}
+                    />
+                    <div className='absolute -bottom-2 -right-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-lg'>
+                        TOP
+                    </div>
+                </div>
+                <div className='flex-1 min-w-0'>
+                    <h2 className="font-bold text-xl text-white truncate group-hover:text-primary transition-colors duration-300">
+                        {universityName}
+                    </h2>
+                    <p className='flex text-gray-400 text-sm items-center gap-1.5 mt-1'>
+                        <IoLocationOutline className='text-primary' /> {universityCity}, {universityCountry}
+                    </p>
                 </div>
             </div>
-            <div className="card-body !p-0 mt-4">
-                <h2 className="font-bold text-2xl text-[#0c281b]">{scholarshipName}</h2>
-                <div className='flex gap-2'>
-                    <p className='flex gap-2 items-center text-base w-[50%]'><IoSchoolOutline />{scholarshipCategory}</p>
-                    <p className='flex gap-2 items-center text-base w-[50%]'><PiCertificate />{degree}</p>
+
+            <div className="flex-1 flex flex-col">
+                <h3 className="font-bold text-2xl text-white mb-4 line-clamp-2 leading-snug">
+                    {scholarshipName}
+                </h3>
+
+                <div className='grid grid-cols-2 gap-4 mb-6'>
+                    <div className='flex items-center gap-2 text-gray-400 text-sm'>
+                        <IoSchoolOutline className='text-primary text-lg' />
+                        <span className='truncate'>{scholarshipCategory}</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-gray-400 text-sm'>
+                        <PiCertificate className='text-accent text-lg' />
+                        <span className='truncate'>{degree}</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-gray-400 text-sm'>
+                        <GiNotebook className='text-secondary text-lg' />
+                        <span className='truncate'>{subjectCategory}</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-gray-400 text-sm'>
+                        <MdOutlineAccessTime className='text-warning text-lg' />
+                        <span className='truncate'>{applicationDeadline}</span>
+                    </div>
                 </div>
-                <div className='flex gap-2'>
-                    <p className='flex gap-2 items-center text-base w-[50%]'><GiNotebook />{subjectCategory}</p>
-                    <p className='flex gap-2 items-center text-base w-[50%]'><MdOutlineAccessTime />{applicationDeadline}</p>
-                </div>
-                <p className='text-[#394630]'>{slicedText}</p>
-                <hr />
-                <div className="card-actions relative justify-between">
-                    <p className='text-2xl font-bold text-[#14452F]'>${applicationFees}</p>
+
+                <p className='text-gray-500 text-sm leading-relaxed mb-6 flex-1'>
+                    {slicedText}
+                </p>
+
+                <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                     <div>
-                        <Link to={`/scholarship-details/${_id}`} className='max-w-max max-h-max'>   <button className="btn -translate-x-5 transition-all duration-300 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 hover:bg-[#7CFF77] hover:text-[#14452F] bg-[#185137] text-white">View Details</button></Link>
-                        <div className="absolute bottom-4 right-4 flex space-x-1 group-hover:-z-10 group-hover:translate-x-5
-                            group-hover:opacity-0
-                            transition-all text-lg duration-300">
+                        <p className='text-xs text-gray-500 uppercase tracking-widest mb-1'>Application Fee</p>
+                        <p className='text-2xl font-black text-white'>
+                            ${applicationFees}
+                        </p>
+                    </div>
+
+                    <div className='flex flex-col items-end gap-2'>
+                        <div className="opacity-100 group-hover:opacity-100 transition-opacity duration-300">
                             <ReactStars
                                 count={5}
                                 edit={false}
-                                size={22}
-                                value={4.5}
+                                size={18}
+                                value={4.8}
                                 isHalf={true}
-                                activeColor="#ffd700" />
+                                activeColor="#6366f1"
+                            />
                         </div>
+                        <Link to={`/scholarship-details/${_id}`}>
+                            <button className="px-5 py-2.5 bg-white/5 hover:bg-primary text-white text-sm font-bold rounded-xl transition-all duration-300 border border-white/10 hover:border-primary">
+                                Details
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
