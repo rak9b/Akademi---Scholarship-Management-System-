@@ -133,7 +133,7 @@ const ScholarshipsDetails = () => {
     return (
         <div className="min-h-screen bg-[#FDFDFC]">
             {/* Cinematic Hero */}
-            <OtherPageBanner image={scholarshipsBanner} heading={scholarshipData.scholarshipName} />
+            <OtherPageBanner image={scholarshipData.universityImage || scholarshipsBanner} heading={scholarshipData.scholarshipName} />
 
             <section className='py-24 relative'>
                 {/* Background Decor */}
