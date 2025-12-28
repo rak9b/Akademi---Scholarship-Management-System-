@@ -1,105 +1,91 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import bgImg from '../../assets/Pattern-Bg.png';
-import image1 from '../../assets/AdobeStock_545875468@2x-1.webp';
-import image2 from '../../assets/AdobeStock_587433154-1.webp';
+import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
+    const navigate = useNavigate();
+
     return (
-        <div className='bg-mesh relative overflow-hidden py-32 md:py-48'>
-            {/* Background Pattern with Animation */}
-            <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.1 }}
-                transition={{ duration: 2 }}
-                style={{ backgroundImage: `url(${bgImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} 
-                className="absolute inset-0 z-0"
-            />
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+            {/* Cinematic Background Elements */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-0 left-0 w-full h-full bg-slate-950" />
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-emerald-900/20 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-gold-600/10 rounded-full blur-[120px]" />
+                <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+            </div>
 
-            <div className='relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12'>
-                <div className='flex flex-col lg:flex-row items-center justify-between gap-12'>
-                    
-                    {/* Left Decorative Image */}
+            <div className="relative z-10 max-w-screen-xl mx-auto px-8 md:px-16 w-full">
+                <div className="flex flex-col items-center text-center">
+
+                    {/* Sequence 1: Decorative Element */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className='hidden lg:block w-1/4'
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 1.5, ease: [0.2, 1, 0.3, 1] }}
+                        className="w-24 h-[1px] bg-accent mb-12"
+                    />
+
+                    {/* Sequence 2: Eyebrow */}
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 1 }}
+                        className="text-accent text-[12px] font-bold tracking-[0.5em] uppercase mb-6"
                     >
-                        <img 
-                            src={image1} 
-                            alt="Student" 
-                            className='rounded-3xl shadow-2xl border border-white/10 animate-float'
-                        />
-                    </motion.div>
+                        Foundation for Excellence
+                    </motion.span>
 
-                    {/* Content Section */}
-                    <div className='flex-1 flex flex-col items-center text-center max-w-3xl'>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className='glass-panel px-6 py-2 rounded-full mb-8'
-                        >
-                            <span className='text-primary font-medium text-sm tracking-widest uppercase'>
-                                Empowering Ambitions • Enabling Success
-                            </span>
-                        </motion.div>
+                    {/* Sequence 3: Headline */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 1.2, ease: [0.2, 1, 0.3, 1] }}
+                        className="font-serif text-6xl md:text-8xl lg:text-9xl text-white leading-[0.9] mb-12 max-w-5xl"
+                    >
+                        Shape Your <br />
+                        <span className="text-gold italic">Academic Destiny</span>
+                    </motion.h1>
 
-                        <motion.h1 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className='text-white text-4xl md:text-6xl xl:text-8xl font-black leading-tight mb-8'
-                        >
-                            Unlock Your Future with <span className='text-gradient'>Scholarships</span>
-                        </motion.h1>
+                    {/* Sequence 4: Description */}
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 1.5 }}
+                        className="text-foreground/60 text-lg md:text-xl max-w-2xl font-light leading-relaxed mb-16"
+                    >
+                        Access a curated ecosystem of global opportunities designed for the next
+                        generation of thinkers, leaders, and visionaries.
+                    </motion.p>
 
-                        <motion.p 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className='text-gray-400 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl'
-                        >
-                            Find, apply, and manage your scholarships effortlessly. Our premium platform guides you every step of the way toward achieving your academic dreams.
-                        </motion.p>
-
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: 0.6 }}
-                            className='flex flex-wrap justify-center gap-6'
-                        >
-                            <button className='px-10 py-4 bg-primary hover:bg-primary-hover text-white font-bold rounded-2xl transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40'>
-                                Get Started
-                            </button>
-                            <button className='px-10 py-4 glass-card text-white font-bold rounded-2xl transition-all duration-300'>
-                                Learn More
-                            </button>
-                        </motion.div>
-                    </div>
-
-                    {/* Right Decorative Image */}
+                    {/* Sequence 5: Actions */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className='hidden lg:block w-1/4'
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1, duration: 1 }}
+                        className="flex flex-col sm:flex-row items-center gap-12"
                     >
-                        <img 
-                            src={image2} 
-                            alt="Success" 
-                            className='rounded-3xl shadow-2xl border border-white/10 animate-float'
-                            style={{ animationDelay: '1s' }}
-                        />
+                        <button
+                            onClick={() => navigate('/all-scholarships')}
+                            className="high-contrast-btn group flex items-center gap-4"
+                        >
+                            Explore Grants
+                            <span className="w-8 h-[1px] bg-emerald-950 group-hover:w-12 transition-all duration-500" />
+                        </button>
+
+                        <div className="w-[1px] h-12 bg-white/10 hidden sm:block" />
+
+                        <div className="flex flex-col items-start gap-1">
+                            <span className="text-[10px] text-accent/60 tracking-widest uppercase font-bold">Applications Open</span>
+                            <span className="text-white font-serif text-xl">Winter 2025 Cohort</span>
+                        </div>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Decorative Orbs */}
-            <div className='absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 blur-[120px] rounded-full z-0' />
-            <div className='absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full z-0' />
-        </div>
+            {/* Bottom Etched Border */}
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
+        </section>
     );
 };
 
