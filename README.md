@@ -79,7 +79,70 @@ Akademi is a comprehensive **scholarship intelligence platform** featuring premi
 
 ---
 
-## 🛠️ **Technology Stack**
+## � **URL Reference**
+
+### 📋 **Frontend Routes**
+
+#### **Public Pages**
+- `Landing Page`: `/`
+- `Scholarships Directory`: `/all-scholarships`
+- `Scholarship Details`: `/scholarship-details/:id`
+- `About Us`: `/about`
+- `Contact Support`: `/contact`
+- `Pricing Plans`: `/pricing`
+- `Login`: `/login`
+- `Register`: `/register`
+
+#### **🎓 Student Dashboard** (`/dashboard/`)
+- `My Profile`: `/dashboard/my-profile`
+- `My Applications`: `/dashboard/my-application`
+- `My Reviews`: `/dashboard/my-reviews`
+
+#### **⚖️ Moderator Dashboard** (`/dashboard/`)
+- `My Profile`: `/dashboard/my-profile`
+- `Add Scholarship`: `/dashboard/add-scholarship`
+- `Manage Scholarships`: `/dashboard/manage-scholarships`
+- `All Reviews`: `/dashboard/all-reviews`
+- `All Applied Scholarships`: `/dashboard/all-applied-scholarship`
+
+#### **👨‍💼 Admin Dashboard** (`/dashboard/`)
+- `Admin Profile`: `/dashboard/admin-profile`
+- `Add Scholarship`: `/dashboard/add-scholarship`
+- `Manage Users`: `/dashboard/manage-users`
+- `Manage Applications`: `/dashboard/manage-applications`
+- `System Analytics`: `/dashboard/admin-profile` (Overview)
+
+### 🔧 **Backend API Endpoints**
+
+#### **Auth & Users**
+- `POST /jwt`: Generate Access Token
+- `POST /users`: Create new user
+- `GET /users`: Get all users (Admin)
+- `GET /users/:email`: Get user by email
+- `PATCH /users/role/:id`: Update user role
+- `DELETE /users/:id`: Remove user
+
+#### **Scholarships**
+- `GET /scholarships`: List all scholarships
+- `GET /scholarships/:id`: Get details
+- `POST /scholarships`: Create listing (Mod/Admin)
+- `PATCH /scholarships/:id`: Update listing
+- `DELETE /scholarships/:id`: Delete listing
+
+#### **Applications**
+- `POST /applied-scholarships`: Submit application
+- `GET /applied-scholarships`: Get all applications
+- `GET /applied-scholarships/:email`: Get student's applications
+- `PATCH /applied-scholarships/:id`: Update status/feedback
+
+#### **Reviews**
+- `POST /reviews`: Submit review
+- `GET /reviews`: Get all reviews
+- `DELETE /reviews/:id`: Delete review
+
+---
+
+## �🛠️ **Technology Stack**
 
 ### **Frontend**
 
